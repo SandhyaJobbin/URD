@@ -421,7 +421,7 @@ body.dark .queue-filter-panel{background:#2c2c2e;border-color:#3a3a3c;}
         <div class="onboard-metric"><div class="val">15</div><div class="lbl">Questions (random 15 from 25+)</div></div>
         <div class="onboard-metric"><div class="val">80%</div><div class="lbl">Required to pass</div></div>
         <div class="onboard-metric"><div class="val">+10</div><div class="lbl">Correct decision</div></div>
-        <div class="onboard-metric"><div class="val">−10</div><div class="lbl">Wrong decision</div></div>
+        <!-- <div class="onboard-metric"><div class="val">−10</div><div class="lbl">Wrong decision</div></div> -->
       </div>
       <div class="onboard-rules">
         <h3>Assessment Rules</h3>
@@ -803,7 +803,7 @@ body.dark .queue-filter-panel{background:#2c2c2e;border-color:#3a3a3c;}
         <div style="font-size:9px;color:var(--gray);margin-top:7px;" id="final-summary"></div>
       </div>
       <div class="analytics-card"><h3>Review Analytics — Decision Log</h3><div id="analytics-rows"></div></div>
-      <div class="telemetry-card"><h3>Session Telemetry (JSON)</h3><div class="telemetry-json" id="telemetry-json"></div></div>
+      <!-- <div class="telemetry-card"><h3>Session Telemetry (JSON)</h3><div class="telemetry-json" id="telemetry-json"></div></div> -->
     </div>
     <div class="results-right">
       <div class="cert-container">
@@ -1392,7 +1392,7 @@ function processDecision(dec,reason){
   const q=activeQBank[currentQIdx];
   const isCorrect=dec===q.correct;
   const timeTaken=Date.now()-startTime;
-  if(isCorrect)score+=10;else score-=10;
+  if(isCorrect)score+=10;else score==10;
   updateScore();
   logT(dec,reason,isCorrect,timeTaken);
   sessionLog.push({q:currentQIdx+1,decision:dec,reason,correct:isCorrect,correctAnswer:q.correct,timeTaken});
